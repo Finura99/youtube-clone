@@ -6,11 +6,14 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const Feed = () => {
 
-const [selectedCategory, setSelectedCategory] = useState("New") ;
+const [selectedCategory,  setSelectedCategory] = useState("New") ;
+const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`);
-  },[selectedCategory]);
+      fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
+        .then((data) => setVideos(data.items))//updates state
+    }, [selectedCategory]);
+    //Recalls the 'fetchapi' function once the cateogry section changes 
 
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
@@ -23,7 +26,6 @@ const [selectedCategory, setSelectedCategory] = useState("New") ;
           Copyright 2022 AE Tube 2023
         </Typography>       
       </Box>
-
       <Box p={2} sx={{ overflowY: "auto"
                       ,height: "90vh"
                       , flex: 2}}>
@@ -32,13 +34,11 @@ const [selectedCategory, setSelectedCategory] = useState("New") ;
                     mb={20} 
                     sx={{color: "#fff"}}>
                       
-
-         {selectedCategory} <span style={{ color: "red" }}>videos</span>
+        {selectedCategory} <span style={{ color: "red" }}>videos</span>
         </Typography> 
 
-        <Videos videos={[]} /> 
+        <Videos videos={videos} /> 
       </Box>
-    
     </Stack>
   )
 }
