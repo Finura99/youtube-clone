@@ -2,8 +2,8 @@ import React from 'react'
 
 const ChannelDetail = () => {
   return (
-    <div>ChannelDetail</div>
+    <div>annelDetail</div>
   )
-}
+  }
 
 export default ChannelDetail

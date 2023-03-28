@@ -1,9 +1,9 @@
 import React from 'react'
 
 const ChannelCard = () => {
-  return (
-    <div>ChannelCard</div>
-  )
+    return (
+        <h1>Channel</h1>
+    )
 }
 
 export default ChannelCard
