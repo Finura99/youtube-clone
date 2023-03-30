@@ -15,7 +15,8 @@ const Videos = ({ videos }) => {
                             {item.id.videoId && <VideoCard video={item}/>}   
                         {/* //if we have an item.id.videoId then that means it should render 
                         a video card */}
-                            {item.id.channelId && <ChannelCard channelDetail={item} />}
+
+                            {item.id.channelId && <ChannelCard channelDetail={item} />} 
                         {/* //if item.id.CHANNEL is true then the channel card should be rendered */}
                         </Box>   
                     ))}

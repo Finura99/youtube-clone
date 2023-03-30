@@ -39,7 +39,7 @@ const [videos, setVideos] = useState([]);
 
         <Videos videos={videos} /> 
       </Box>
-    </Stack>
+    </Stack> 
   )
 }
 
